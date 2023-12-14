@@ -7,16 +7,14 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../Utils/Firebase.js";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../Utils/userSlice.js";
+import { USER_AVATAR } from "../Utils/constants.js";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMeassage] = useState(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
-
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
@@ -44,7 +42,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/92371379?v=4",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
               // Profile updated!
@@ -52,21 +50,15 @@ const Login = () => {
               dispatch(
                 addUser({ uid: uid, email: email, displayName: displayName })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               setErrorMeassage(error.message);
             });
-          console.log(user);
-          // navigate("/browse");
-
-         
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMeassage(errorCode + "-" + errorMessage);
-         
         });
     } else {
       //Sign In Logic
@@ -78,8 +70,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
 
           // ...
         })
@@ -138,6 +128,7 @@ const Login = () => {
             ? "New to Netflix ? Sign Up Now."
             : "Already registered ? Sign In Now."}
         </p>
+        <p>testuser1@gmail.com,Test@123</p>
       </form>
     </div>
   );

@@ -10,7 +10,7 @@ const Browse = () => {
   useNowPlayingMovies();
   usePopularMovies();
   return (
-    <div>
+    <div className="h-screen w-screen">
       <Header />
       {showGptSearch ? (
         <GptSearch />

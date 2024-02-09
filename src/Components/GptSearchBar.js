@@ -21,8 +21,10 @@ const GptSearchBar = () => {
     return json.results;
   };
   const handleGptSearchClick = async () => {
-    console.log(searchText.current.value);
-    // Make an API call to GPT API and get Movie Results
+    // console.log(searchText.current.value);
+    // API call to GPT API and get Movie Results
+
+    
     const gptQuery =
       "Act as a Movie Recommendation system and suggest some movies for the query : " +
       searchText.current.value +
@@ -31,11 +33,11 @@ const GptSearchBar = () => {
       messages: [{ role: "user", content: gptQuery }],
       model: "gpt-3.5-turbo",
     });
-    if (!gptResults.choices) {
-      // TODO: Write Error Handling
-    }
 
-    console.log(gptResults.choices?.[0]?.message?.content);
+
+    if (!gptResults.choices) {
+      
+    }
     const gptMovies = gptResults.choices?.[0]?.message?.content.split(",");
 
     // For each movie I will search TMDB API
@@ -48,60 +50,6 @@ const GptSearchBar = () => {
     dispatch(
       addGptMovieResult({ movieNames: gptMovies, movieResults: tmdbResults })
     );
-    // console.log(searchText.current.value);
-
-    // const gptQuery =
-    //   "Act as a Movie Recommendation system and suggest some movies for the query : " +
-    //   searchText.current.value +
-    //   ". only give me names of 5 movies, comma separated like the example result given ahead. Example Result: Gadar, Sholay, Don, Golmaal, Koi Mil Gaya";
-
-    // // Defining a function for retrying API requests
-    // const retryRequest = async (retryCount) => {
-    //   try {
-    //     const gptResults = await openai.chat.completions.create({
-    //       messages: [{ role: "user", content: gptQuery }],
-    //       model: "gpt-3.5-turbo",
-    //     });
-
-    //     if (!gptResults.choices) {
-    //       // Handle API response error
-    //       console.error("Error in API response:", gptResults);
-    //       return null;
-    //     }
-
-    //     console.log(gptResults.choices?.[0]?.message?.content);
-    //     return gptResults.choices?.[0]?.message?.content.split(",");
-    //   } catch (error) {
-    //     console.error(`Error in API request (retry ${retryCount}):`, error);
-    //     return null;
-    //   }
-    // };
-
-    // // Implement basic retry logic with an increasing delay
-    // const maxRetries = 3;
-    // let retryCount = 0;
-    // let gptMovies = null;
-
-    // while (retryCount < maxRetries) {
-    //   gptMovies = await retryRequest(retryCount);
-    //   if (gptMovies !== null) {
-    //     break;
-    //   }
-
-    //   retryCount++;
-    //   const delay = retryCount * 1000; // Increase delay linearly with retries (in milliseconds)
-    //   await new Promise((resolve) => setTimeout(resolve, delay));
-    // }
-
-    // if (gptMovies === null) {
-    //   // Implement further error handling or inform the user about the issue
-    //   console.error(
-    //     "Unable to retrieve GPT movie recommendations after retries."
-    //   );
-    //   return;
-    // }
-
-    // // The rest of your code for TMDB API calls...
   };
   return (
     <div className="pt-[35%] md:pt-[10%] flex justify-center">

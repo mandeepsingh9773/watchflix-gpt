@@ -5,12 +5,14 @@ import useNowPlayingMovies from "../Hooks/useNowPlayingMovies";
 import usePopularMovies from "../Hooks/usePopularMovies";
 import GptSearch from "./GptSearch";
 import { useSelector } from "react-redux";
+import useUpcomingMovies from "../Hooks/useUpcomingMovies";
 const Browse = () => {
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
   useNowPlayingMovies();
   usePopularMovies();
+  useUpcomingMovies();
   return (
-    <div className="h-screen w-screen">
+    <div className="h-screen w-screen ">
       <Header />
       {showGptSearch ? (
         <GptSearch />

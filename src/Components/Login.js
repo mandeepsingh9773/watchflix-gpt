@@ -30,7 +30,11 @@ const Login = () => {
     if (message) return;
 
     if (!isSignInForm) {
+      //Will have the Sign Up Page
+
       //Sign Up Logic
+
+      //Coming from Firebase
       createUserWithEmailAndPassword(
         auth,
         email.current.value,
@@ -69,8 +73,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-
-          // ...
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -84,7 +86,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-        className="h-screen w-screen object-cover"
+          className="h-screen w-screen object-cover"
           src={BG_URL}
           alt="bgphoto"
         />

@@ -7,7 +7,7 @@ const VideoBackground = ({ movieId }) => {
 
   useMovieTrailer(movieId);
   return (
-    <div className="w-screen bg-gradient-to-b from-black">
+    <div className="w-[99vw] bg-gradient-to-b from-black">
       <iframe
         className="w-screen aspect-video"
         style={{ objectFit: "cover" }}

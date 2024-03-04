@@ -3,21 +3,21 @@ export const LOGO =
 export const USER_AVATAR =
   "https://occ-0-6247-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABdpkabKqQAxyWzo6QW_ZnPz1IZLqlmNfK-t4L1VIeV1DY00JhLo_LMVFp936keDxj-V5UELAVJrU--iUUY2MaDxQSSO-0qw.png?r=e6e";
 
-// export const API_OPTIONS = {
-//   method: "GET",
-//   headers: {
-//     accept: "application/json",
-//     Authorization:
-//       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZWM1NTFhMjYxZTQzY2JhNzA2MzQzNTNiMjIxYzRlNyIsInN1YiI6IjY1N2EwMjNlNTY0ZWM3MDBjNDc0Yzg1ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.NbGQCSKe8OnNTaJn8pj2hRtJpC3YxLQB-V29eSk1iiU",
-//   },
-// };
 export const API_OPTIONS = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "9d00525007mshd995d667b1939cfp19ea5cjsn867d4883fe3d",
-    "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZWM1NTFhMjYxZTQzY2JhNzA2MzQzNTNiMjIxYzRlNyIsInN1YiI6IjY1N2EwMjNlNTY0ZWM3MDBjNDc0Yzg1ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.NbGQCSKe8OnNTaJn8pj2hRtJpC3YxLQB-V29eSk1iiU",
   },
 };
+// export const API_OPTIONS = {
+//   method: "GET",
+//   headers: {
+//     "X-RapidAPI-Key": "9d00525007mshd995d667b1939cfp19ea5cjsn867d4883fe3d",
+//     "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
+//   },
+// };
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
 
 export const BG_URL =

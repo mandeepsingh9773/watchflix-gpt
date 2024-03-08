@@ -11,13 +11,7 @@ export const API_OPTIONS = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZWM1NTFhMjYxZTQzY2JhNzA2MzQzNTNiMjIxYzRlNyIsInN1YiI6IjY1N2EwMjNlNTY0ZWM3MDBjNDc0Yzg1ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.NbGQCSKe8OnNTaJn8pj2hRtJpC3YxLQB-V29eSk1iiU",
   },
 };
-// export const API_OPTIONS = {
-//   method: "GET",
-//   headers: {
-//     "X-RapidAPI-Key": "9d00525007mshd995d667b1939cfp19ea5cjsn867d4883fe3d",
-//     "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
-//   },
-// };
+
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
 
 export const BG_URL =

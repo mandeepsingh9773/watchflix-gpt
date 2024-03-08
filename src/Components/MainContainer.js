@@ -7,11 +7,16 @@ const MainContainer = () => {
 
   // console.log(movies)
   if (!movies || movies.length === 0) {
-    return <div>Loading...</div>; 
+    return (
+      <div className="w-full h-[100vh] bg-black flex justify-center items-center">
+        <div className="py-24">
+          <p className="text-2xl text-white">Loading...</p>
+        </div>
+      </div>
+    );
   }
-  
+
   const mainMovie = movies[0];
-  
 
   const { original_title, overview, id } = mainMovie;
 
